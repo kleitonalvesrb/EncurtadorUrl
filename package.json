@@ -1,0 +1,38 @@
+{
+  "name": "encurtadorurl",
+  "version": "1.0.0",
+  "description": "Encurtador de Url",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon",
+    "lint": "eslint --ext .js,.html -f ./node_modules/eslint-friendly-formatter . --fix",
+    "prepush": "npm run lint",
+    "swagger-autogen": "node swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kleitonalvesrb/encurtador.git"
+  },
+  "author": "Kleiton Batista",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kleitonalvesrb/encurtador/issues"
+  },
+  "homepage": "https://github.com/kleitonalvesrb/encurtador#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.0",
+    "pg": "^8.6.0",
+    "swagger-autogen": "^2.10.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "nodemon": "^2.0.7"
+  }
+}

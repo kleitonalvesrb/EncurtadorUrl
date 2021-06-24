@@ -6,7 +6,7 @@
     "description": ""
   },
   "host": "localhost:3300",
-  "basePath": "/api/",
+  "basePath": "/api",
   "tags": [],
   "schemes": [
     "http"
@@ -17,7 +17,7 @@
     "/urls": {
       "post": {
         "tags": [],
-        "description": "",
+        "description": "<h1>Endpoint responsável por receber os dados da url que será encurtada</h1>",
         "parameters": [
           {
             "name": "obj",
@@ -55,13 +55,13 @@
     "/url/{id}": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "Endpoint responsável por recuperar um url encurtada apartir de um id informado",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer"
           }
         ],
         "responses": {
@@ -74,7 +74,7 @@
     "/urlencurtada/{urlencurtada}": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "Endpoint responsável por redirecionar para o endereço original, através da url encurtada informado, redireciona para a url original",
         "parameters": [
           {
             "name": "urlencurtada",
@@ -89,25 +89,25 @@
     "/urlsdata/{dia}/{mes}/{ano}": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "endpoint responsável por recuperar todas as urls cadastradas em uma determinada data, espera se uma data no formato dd/mm/yyyy",
         "parameters": [
           {
             "name": "dia",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer"
           },
           {
             "name": "mes",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer"
           },
           {
             "name": "ano",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer"
           }
         ],
         "responses": {
@@ -120,7 +120,7 @@
     "/": {
       "get": {
         "tags": [],
-        "description": "",
+        "description": "Endpoint Inicial, não espera nenhum parametro, apenas retorna mensagem de saudações",
         "parameters": [],
         "responses": {
           "200": {

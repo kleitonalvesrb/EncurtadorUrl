@@ -1,7 +1,22 @@
 const db = require('../config/database');
 const util = require('../util/util');
+/**
+ * @module urlController 
+ */
+/**
+ * Resposta do criaUrl
+ * @typedef {Object} criaUrl
+ * @property {Object} result - Dados da url encurtada
+ * 
+ */
 
-
+/**
+ * @param {String} urloriginal -- url antes de ser encurtada, exemplo: https://nodejs.org/en/
+ * @param {String} urldescricao -- descrição da url que será encurtada, exemplo: Site para download do node js
+ * @param {Express.Request} req 
+ * @param {Express.Response} res 
+ * @returns {Promise<criaUrl>}
+ */
 exports.criaUrl = async (req, res ) =>{
     const {urloriginal,urldescricao} = req.body;
     const urlencurtada = util.criaUrlEncurtada();

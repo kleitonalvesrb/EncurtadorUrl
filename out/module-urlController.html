@@ -64,12 +64,17 @@
     
 
     
-    <h4 class="name" id=".criaUrl"><span class="type-signature">(static) </span>criaUrl<span class="signature">(urloriginal, urldescricao, req, res)</span><span class="type-signature"> &rarr; {Promise.&lt;criaUrl>}</span></h4>
+    <h4 class="name" id=".buscaTodas"><span class="type-signature">(static) </span>buscaTodas<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    Não precisa de parametros:
+Retorna todas as URL encurtadas presente na base dados
+</div>
 
 
 
@@ -104,13 +109,13 @@
 
         <tr>
             
-                <td class="name"><code>urloriginal</code></td>
+                <td class="name"><code>req</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Express.Request</span>
 
 
             
@@ -120,20 +125,20 @@
 
             
 
-            <td class="description last">- url antes de ser encurtada, exemplo: https://nodejs.org/en/</td>
+            <td class="description last">@description teste</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>urldescricao</code></td>
+                <td class="name"><code>res</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Express.Response</span>
 
 
             
@@ -143,9 +148,640 @@
 
             
 
-            <td class="description last">- descrição da url que será encurtada, exemplo: Site para download do node js</td>
+            <td class="description last"></td>
         </tr>
 
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_url.controller.js.html">controllers/url.controller.js</a>, <a href="controllers_url.controller.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".buscaUrlEncurtada"><span class="type-signature">(static) </span>buscaUrlEncurtada<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise.buscaUrlEncurtada}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Redireciona para a URL correta, apartir da url encurtada
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_url.controller.js.html">controllers/url.controller.js</a>, <a href="controllers_url.controller.js.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.buscaUrlEncurtada</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".buscaUrlId"><span class="type-signature">(static) </span>buscaUrlId<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise.buscaUrlId}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Recupera uma ulr encurtada pelo ID
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Express.Request</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Express.response</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_url.controller.js.html">controllers/url.controller.js</a>, <a href="controllers_url.controller.js.html#line53">line 53</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.buscaUrlId</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".buscaUrlsData"><span class="type-signature">(static) </span>buscaUrlsData<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Recupera todas as urls de uma determinada data
+espera como parametro a data no formado dd/mm/yyyy
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Express.Request</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Express.response</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_url.controller.js.html">controllers/url.controller.js</a>, <a href="controllers_url.controller.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".criaUrl"><span class="type-signature">(static) </span>criaUrl<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {Promise.&lt;criaUrl>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Responsável por Receber uma URL que deve ser encurtada e salvar no banco.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -230,7 +866,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="url.controller.js.html">url.controller.js</a>, <a href="url.controller.js.html#line20">line 20</a>
+        <a href="controllers_url.controller.js.html">controllers/url.controller.js</a>, <a href="controllers_url.controller.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -392,7 +1028,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="url.controller.js.html">url.controller.js</a>, <a href="url.controller.js.html#line6">line 6</a>
+        <a href="controllers_url.controller.js.html">controllers/url.controller.js</a>, <a href="controllers_url.controller.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -422,13 +1058,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-urlController.html">urlController</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Database.html">Database</a></li><li><a href="module-Router.html">Router</a></li><li><a href="module-urlController.html">urlController</a></li><li><a href="module-Util.html">Util</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Jun 23 2021 23:29:26 GMT-0300 (Horário Padrão de Brasília)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Jun 27 2021 10:28:12 GMT-0300 (Horário Padrão de Brasília)
 </footer>
 
 <script> prettyPrint(); </script>

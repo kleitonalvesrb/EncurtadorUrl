@@ -11,10 +11,9 @@ const util = require('../util/util');
  */
 
 /**
- * @param {String} urloriginal -- url antes de ser encurtada, exemplo: https://nodejs.org/en/
- * @param {String} urldescricao -- descrição da url que será encurtada, exemplo: Site para download do node js
- * @param {Express.Request} req 
- * @param {Express.Response} res 
+ * Responsável por Receber uma URL que deve ser encurtada e salvar no banco.
+ * @param {Express.Request} req @description urloriginal, urldescricao
+ * @param {Express.Response} res @description dados de url encurtada
  * @returns {Promise<criaUrl>}
  */
 exports.criaUrl = async (req, res ) =>{
@@ -34,11 +33,23 @@ exports.criaUrl = async (req, res ) =>{
     });
 }
 
+/**
+ * Não precisa de parametros:
+ * Retorna todas as URL encurtadas presente na base dados
+ * @param {Express.Request} req  @description Sem parametros
+ * @param {Express.Response} res @description
+ */
 exports.buscaTodas = async (req, res )=>{
     const response = await db.query("select * from encurtador.url u where urlstatus = true;");
     res.status(200).send(response.rows);
 };
 
+/**
+ * Recupera uma ulr encurtada pelo ID
+ * @param {Express.Request} req @description id da url
+ * @param {Express.response} res @description dados da url
+ * @returns {Promise.buscaUrlId}
+ */
 exports.buscaUrlId = async (req,res) =>{
     //console.log(req.params.id);
     const  urlId  = req.params.id;
@@ -46,6 +57,12 @@ exports.buscaUrlId = async (req,res) =>{
     const response = await db.query("select * from encurtador.url where urlid = $1", [urlId]);
     res.status(200).send(response.rows);
 };
+/**
+ * Redireciona para a URL correta, apartir da url encurtada
+ * @param {*} req @description urlencurtada
+ * @param {*} res @description redireciona para a url original
+ * @returns {Promise.buscaUrlEncurtada}
+ */
 exports.buscaUrlEncurtada = async (req,res) =>{
     const urlEncurtada = req.params.urlencurtada;
     const response = await db.query("select urloriginal from encurtador.url where urlencurtada = $1", [urlEncurtada]);
@@ -53,6 +70,12 @@ exports.buscaUrlEncurtada = async (req,res) =>{
     res.redirect(response.rows[0].urloriginal);    
 };
 
+/**
+ * Recupera todas as urls de uma determinada data
+ * espera como parametro a data no formado dd/mm/yyyy
+ * @param {Express.Request} req @description dia/mes/ano
+ * @param {Express.response} res @description lista de urls cadastrada nessa data
+ */
 exports.buscaUrlsData = async (req,res) => {
     const {dia,mes,ano} = req.params;
     let data = dia + "/" + mes + "/" + ano;
